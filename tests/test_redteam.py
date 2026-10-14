@@ -74,3 +74,11 @@ def test_fork_bomb_contained():
 def test_naive_harness_is_fooled():
     """Documents the baseline's weakness -- the motivating result for the oracle design."""
     assert run("import sys\nsys.exit(0)\ndef add(a, b): return 0", mode="naive").status == "PASS"
+
+
+@pytest.mark.parametrize("cpu", [0.5, 1.5, 2.5])
+def test_fractional_cpu_limit_still_classified_as_timeout(cpu):
+    """Regression: RLIMIT_CPU is whole seconds; a fractional budget once produced CHILD_CRASH."""
+    lim = Limits(cpu_seconds=cpu, wall_seconds=10, memory_mb=128)
+    r = execute(Sample("t", 0, "def add(a, b):\n    while True: pass", TEST, "add"), lim, BACKEND)
+    assert r.status == "TIMEOUT_CPU"

@@ -17,6 +17,7 @@ the candidate, and no harness-level fault occurred.
 """
 import builtins
 import json
+import math
 import os
 import resource
 import select
@@ -217,8 +218,14 @@ def read_oom_kills():
     return None
 
 
+def enforced_cpu_limit(payload):
+    """RLIMIT_CPU only takes whole seconds. Round UP so a fractional budget is never
+    tightened, and classify timeouts against this enforced value, not the requested one."""
+    return max(1, math.ceil(payload["cpu_seconds"]))
+
+
 def spawn_child(payload, child_src, drop_privs):
-    cpu = max(1, int(payload["cpu_seconds"]))
+    cpu = enforced_cpu_limit(payload)
 
     def limits():
         resource.setrlimit(resource.RLIMIT_CPU, (cpu, cpu + 1))
@@ -308,13 +315,14 @@ def run_oracle(payload, drop_privs):
     except HarnessFault as f:
         status, detail = f.status, str(f)
     if status == "CHILD_DIED":
-        status = classify_death(proc, oom_before, payload["cpu_seconds"])
+        status = classify_death(proc, oom_before, enforced_cpu_limit(payload))
     finish(proc)
     use = resource.getrusage(resource.RUSAGE_CHILDREN)
     return {
         "status": status, "detail": detail[:1000], "calls": ch.calls,
         "cpu_time": round(use.ru_utime + use.ru_stime, 4),
         "max_rss_kb": use.ru_maxrss,
+        "cpu_limit_enforced": enforced_cpu_limit(payload),
         "stderr_tail": b"".join(err).decode("utf-8", "replace")[-2000:],
     }
 
