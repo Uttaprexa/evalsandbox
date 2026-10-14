@@ -36,7 +36,7 @@ CPU timeouts (infinite loop, via `RLIMIT_CPU` → SIGXCPU) are distinguished fro
 
 ## Results: Qwen2.5-Coder-1.5B on HumanEval
 
-Setup: 164 problems × 20 samples = 3,280 completions from `qwen2.5-coder:1.5b-base` (Ollama, temperature 0.8, top-p 0.95, 512-token limit). Default limits are 3 s CPU, 10 s wall-clock, 256 MB memory, one fresh container per sample. All 164 canonical solutions pass, and the 21-case red-team suite passes under Docker.
+Setup: 164 problems × 20 samples = 3,280 completions from `qwen2.5-coder:1.5b-base` (Ollama, temperature 0.8, top-p 0.95, 512-token limit). Default limits are 3 s CPU, 10 s wall-clock, 256 MB memory, one fresh container per sample. All 164 canonical solutions pass, and the 24-case red-team suite passes under Docker.
 
 | metric | value |
 |---|---|
@@ -45,10 +45,13 @@ Setup: 164 problems × 20 samples = 3,280 completions from `qwen2.5-coder:1.5b-b
 | failures that are logic errors | 2,201 of 2,209 (99.6%) |
 | resource failures (CPU timeout / OOM) | 8 (0.24% of samples) |
 | resource failures passing at 2×, 4×, 8× limits | 0 of 8 |
-| pass@1 across 0.25× to 4× limits | 32.7% at every level |
+| pass@1 across 0.25× to 4× limits | 32.65% at every level (1,071 passes each)* |
 | canonical solutions flaky at concurrency 1 / 4 / 16 | 0 / 0 / 0 |
 | noise band (strict vs. lenient pass@1) | 32.65% to 32.90% |
 | naive exit-code harness pass@1 | 32.7% (identical verdicts on all 3,280) |
+| greedy (temperature 0) pass@1 | 34.1%, vs. 43.9% in the Qwen2.5-Coder report |
+
+\* `RLIMIT_CPU` takes whole seconds and the first harness version rounded down, so the 0.25× and 0.5× points both ran at a 1 s CPU limit (see bugs below).
 
 ![Outcome by cause](docs/figures/status_breakdown.png)
 
@@ -66,9 +69,32 @@ Setup: 164 problems × 20 samples = 3,280 completions from `qwen2.5-coder:1.5b-b
 
 ![Failures by truncation](docs/figures/truncation.png)
 
+- **The stop rule that cuts helper functions.** HumanEval harnesses conventionally stop generation at the next top-level `def`, which deletes helpers the model writes below its answer. NameError is 57% of all exceptions, so all 285 NameError samples were regenerated with the same seeds but without that stop (`rerun_helpers.py`). Of the 275 whose main code came out identical, only 37 (13%) went on to define the missing name, and 10 of those then passed: a cost of 0.3 pass@1 points. The other 87% are genuine model errors: missing imports (`math` 46, `re` 20, `hashlib` 16) or helpers it never writes (`is_prime` was called 26 times without ever being defined).
+
+**Overall:** every misattribution source found (truncation, `input()`, CPU-limit rounding, the helper stop rule) is small; together they touch about 0.7% of samples and well under one pass@1 point.
+
+### Bugs the study found in its own harness
+
+1. **`input()` reported as a resource failure.** Candidate stdin was the protocol pipe, so interactive code hung until the wall timeout. Fixed by giving the candidate an empty stdin.
+2. **Fractional CPU limits truncated.** `RLIMIT_CPU` takes whole seconds and the harness rounded down, so 1.5 s became 1 s. Now rounds up.
+3. **CPU timeouts mislabeled as crashes.** Timeouts were classified against the requested limit rather than the enforced one, turning 2 timeouts into `CHILD_CRASH` at 0.5×. Now classified against the enforced limit, which is recorded in every result.
+
+Each has a regression test in `tests/test_redteam.py`.
+
+### Other observations
+
+- **Validation against the published score.** Greedy pass@1 is 34.1%, about 10 points under the 43.9% the Qwen2.5-Coder technical report gives for the base 1.5B model. Likely causes are that Ollama serves a 4-bit (Q4_K_M) quantization and that prompt formatting and stop rules differ between harnesses; neither has been tested. Greedy beating sampled pass@1 (32.7%) is the expected direction.
+- **Headroom.** Correct solutions use a median 0.24 s of CPU and at most 17 MB of memory (15× under the limit). CPU readings are noisy under load: one solution measured 1.58 s yet passed under a 1 s limit in another run.
+- **Cost of isolation.** A fresh container per sample takes a median 2.4 s end to end versus 0.24 s of candidate CPU, about 10× overhead (MacBook Air, Docker Desktop, 8 in parallel).
+- **Nondeterministic model code.** One of 3,280 samples changed failure type between two runs at identical limits, a noise source separate from infrastructure flakiness.
+- **Difficulty.** 34 problems (21%) were never solved in 20 tries and only 4 were solved every time; pass@k climbs from 32.7% at k=1 to 79.3% at k=20.
+
+![pass@k curve](docs/figures/passk_curve.png)
+![Exception types](docs/figures/exception_types.png)
+
 ### Next steps
 
-The null results suggest HumanEval is too easy, computationally, to stress the infrastructure. Natural extensions are an efficiency-sensitive benchmark where limits should matter, MBPP (the loader already supports it), and adversarial completions (prompting an instruct model to pass the tests by any means) to measure how often the naive harness is fooled by real model output rather than hand-written exploits.
+The null results suggest HumanEval is too easy, computationally, to stress the infrastructure. Natural extensions are a full-precision run to explain the gap to the published score, an efficiency-sensitive benchmark where limits should matter, MBPP (the loader already supports it), and adversarial completions (prompting an instruct model to pass the tests by any means) to measure how often the naive harness is fooled by real model output rather than hand-written exploits.
 
 ## Quickstart
 

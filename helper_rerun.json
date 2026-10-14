@@ -1,0 +1,2332 @@
+{
+  "summary": {
+    "namerror_samples": 285,
+    "same_code_prefix": 275,
+    "model_defined_missing_name_later": 37,
+    "of_those_now_pass": 10,
+    "pass@1_gain_if_helpers_kept": 0.00305,
+    "new_status_of_helper_cases": {
+      "PASS": 10,
+      "FAIL_SYNTAX": 8,
+      "FAIL_ASSERTION": 8,
+      "FAIL_EXCEPTION": 10,
+      "FAIL_LOAD": 1
+    },
+    "missing_names_in_helper_cases": {
+      "is_prime": 3,
+      "mean": 2,
+      "is_number": 1,
+      "parse_nested_parens_helper": 1,
+      "_parse_paren": 1,
+      "find_max_depth": 1,
+      "parse_parens": 1,
+      "parse_note": 1,
+      "largest_divisor_helper": 1,
+      "is_prime_helper": 1,
+      "binary_search": 1,
+      "solve_2_poly": 1,
+      "count_of_sevens": 1,
+      "sort_even_helper": 1,
+      "nth_prime_fib": 1
+    },
+    "missing_names_not_defined": {
+      "math": 46,
+      "is_prime": 26,
+      "re": 20,
+      "hashlib": 16,
+      "reduce": 10,
+      "sqrt": 7,
+      "factorial": 7,
+      "Counter": 6,
+      "prod": 4,
+      "functools": 4,
+      "floor": 3,
+      "itertools": 3,
+      "cars": 3,
+      "collections": 3,
+      "product": 2
+    }
+  },
+  "rows": [
+    {
+      "problem_id": "HumanEval/2",
+      "sample_id": 1,
+      "missing": "is_number",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "PASS"
+    },
+    {
+      "problem_id": "HumanEval/2",
+      "sample_id": 2,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/2",
+      "sample_id": 5,
+      "missing": "floor",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/2",
+      "sample_id": 8,
+      "missing": "floor",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/2",
+      "sample_id": 12,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/2",
+      "sample_id": 13,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/2",
+      "sample_id": 19,
+      "missing": "floor",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/4",
+      "sample_id": 11,
+      "missing": "mean",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/4",
+      "sample_id": 18,
+      "missing": "mean",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "PASS"
+    },
+    {
+      "problem_id": "HumanEval/6",
+      "sample_id": 3,
+      "missing": "parse_nested_parens_helper",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_ASSERTION"
+    },
+    {
+      "problem_id": "HumanEval/6",
+      "sample_id": 10,
+      "missing": "_parse_paren",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_ASSERTION"
+    },
+    {
+      "problem_id": "HumanEval/6",
+      "sample_id": 15,
+      "missing": "find_max_depth",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "PASS"
+    },
+    {
+      "problem_id": "HumanEval/6",
+      "sample_id": 16,
+      "missing": "parse_parens",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/8",
+      "sample_id": 1,
+      "missing": "prod",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/8",
+      "sample_id": 2,
+      "missing": "reduce",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/8",
+      "sample_id": 3,
+      "missing": "reduce",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/8",
+      "sample_id": 6,
+      "missing": "reduce",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/8",
+      "sample_id": 8,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/8",
+      "sample_id": 9,
+      "missing": "prod",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/8",
+      "sample_id": 12,
+      "missing": "product",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/9",
+      "sample_id": 4,
+      "missing": "itertools",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/9",
+      "sample_id": 5,
+      "missing": "itertools",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/10",
+      "sample_id": 8,
+      "missing": "find_last_index",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/13",
+      "sample_id": 5,
+      "missing": "gcd",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/13",
+      "sample_id": 6,
+      "missing": "gcd",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/17",
+      "sample_id": 15,
+      "missing": "parse_note",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/24",
+      "sample_id": 6,
+      "missing": "largest_divisor_helper",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/25",
+      "sample_id": 17,
+      "missing": "_factorize",
+      "same_prefix": false,
+      "defines_missing": false,
+      "new_status": "FAIL_ASSERTION"
+    },
+    {
+      "problem_id": "HumanEval/31",
+      "sample_id": 3,
+      "missing": "sqrt",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/31",
+      "sample_id": 10,
+      "missing": "sqrt",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/31",
+      "sample_id": 13,
+      "missing": "sqrt",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/31",
+      "sample_id": 14,
+      "missing": "is_prime_helper",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/31",
+      "sample_id": 16,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/32",
+      "sample_id": 8,
+      "missing": "binary_search",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/32",
+      "sample_id": 19,
+      "missing": "solve_2_poly",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/33",
+      "sample_id": 5,
+      "missing": "sort_second",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/35",
+      "sample_id": 0,
+      "missing": "reduce",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/35",
+      "sample_id": 2,
+      "missing": "reduce",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/35",
+      "sample_id": 8,
+      "missing": "functools",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/36",
+      "sample_id": 16,
+      "missing": "count_of_sevens",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/37",
+      "sample_id": 2,
+      "missing": "sort_even_helper",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/37",
+      "sample_id": 18,
+      "missing": "sort",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/37",
+      "sample_id": 19,
+      "missing": "itertools",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_LOAD"
+    },
+    {
+      "problem_id": "HumanEval/39",
+      "sample_id": 1,
+      "missing": "fib_prime_iter",
+      "same_prefix": false,
+      "defines_missing": false,
+      "new_status": "FAIL_LOAD"
+    },
+    {
+      "problem_id": "HumanEval/39",
+      "sample_id": 3,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/39",
+      "sample_id": 5,
+      "missing": "nth_prime_fib",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/39",
+      "sample_id": 6,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_ASSERTION"
+    },
+    {
+      "problem_id": "HumanEval/39",
+      "sample_id": 7,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/39",
+      "sample_id": 9,
+      "missing": "find_prime_fib",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/39",
+      "sample_id": 12,
+      "missing": "nth_prime_fib",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/39",
+      "sample_id": 15,
+      "missing": "nth_prime_fib",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/39",
+      "sample_id": 16,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/39",
+      "sample_id": 18,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/39",
+      "sample_id": 19,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/40",
+      "sample_id": 6,
+      "missing": "combinations",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/40",
+      "sample_id": 9,
+      "missing": "combinations",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_LOAD"
+    },
+    {
+      "problem_id": "HumanEval/41",
+      "sample_id": 2,
+      "missing": "cars",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/41",
+      "sample_id": 7,
+      "missing": "cars",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/41",
+      "sample_id": 9,
+      "missing": "cars",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/42",
+      "sample_id": 0,
+      "missing": "increment",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/44",
+      "sample_id": 8,
+      "missing": "change_base_to_x",
+      "same_prefix": false,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/44",
+      "sample_id": 12,
+      "missing": "base_to_digits",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/44",
+      "sample_id": 19,
+      "missing": "convert_to_base",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "PASS"
+    },
+    {
+      "problem_id": "HumanEval/47",
+      "sample_id": 2,
+      "missing": "sort",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/47",
+      "sample_id": 7,
+      "missing": "merge_sort",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/47",
+      "sample_id": 17,
+      "missing": "is_even",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "PASS"
+    },
+    {
+      "problem_id": "HumanEval/48",
+      "sample_id": 5,
+      "missing": "is_symmetric",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "PASS"
+    },
+    {
+      "problem_id": "HumanEval/48",
+      "sample_id": 6,
+      "missing": "is_palindrome_helper",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "PASS"
+    },
+    {
+      "problem_id": "HumanEval/48",
+      "sample_id": 14,
+      "missing": "is_palindrome_rec",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/49",
+      "sample_id": 3,
+      "missing": "_modp",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_LOAD"
+    },
+    {
+      "problem_id": "HumanEval/51",
+      "sample_id": 4,
+      "missing": "re",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/51",
+      "sample_id": 7,
+      "missing": "re",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/51",
+      "sample_id": 11,
+      "missing": "re",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/51",
+      "sample_id": 12,
+      "missing": "re",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/51",
+      "sample_id": 16,
+      "missing": "re",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/51",
+      "sample_id": 17,
+      "missing": "re",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/51",
+      "sample_id": 18,
+      "missing": "re",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/51",
+      "sample_id": 19,
+      "missing": "re",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/54",
+      "sample_id": 1,
+      "missing": "Counter",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/54",
+      "sample_id": 14,
+      "missing": "same_chars_length",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/54",
+      "sample_id": 15,
+      "missing": "Counter",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/55",
+      "sample_id": 11,
+      "missing": "_fib",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "PASS"
+    },
+    {
+      "problem_id": "HumanEval/56",
+      "sample_id": 15,
+      "missing": "correct_bracketing_helper",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_ASSERTION"
+    },
+    {
+      "problem_id": "HumanEval/57",
+      "sample_id": 5,
+      "missing": "monotonic2",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_ASSERTION"
+    },
+    {
+      "problem_id": "HumanEval/57",
+      "sample_id": 14,
+      "missing": "less_or_equal",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/57",
+      "sample_id": 19,
+      "missing": "adjacent_inversions",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/58",
+      "sample_id": 8,
+      "missing": "is_sorted",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/59",
+      "sample_id": 2,
+      "missing": "largest_prime_factor_of_number",
+      "same_prefix": false,
+      "defines_missing": true,
+      "new_status": "FAIL_LOAD"
+    },
+    {
+      "problem_id": "HumanEval/59",
+      "sample_id": 4,
+      "missing": "sqrt",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/59",
+      "sample_id": 5,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/59",
+      "sample_id": 6,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/59",
+      "sample_id": 8,
+      "missing": "next_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/59",
+      "sample_id": 9,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/59",
+      "sample_id": 14,
+      "missing": "sqrt",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/59",
+      "sample_id": 15,
+      "missing": "reduce",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/59",
+      "sample_id": 17,
+      "missing": "sqrt",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_LOAD"
+    },
+    {
+      "problem_id": "HumanEval/59",
+      "sample_id": 18,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/59",
+      "sample_id": 19,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/61",
+      "sample_id": 5,
+      "missing": "count",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/61",
+      "sample_id": 8,
+      "missing": "check_opening",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/61",
+      "sample_id": 15,
+      "missing": "correct_bracketing2",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/61",
+      "sample_id": 18,
+      "missing": "count_bracketings",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_ASSERTION"
+    },
+    {
+      "problem_id": "HumanEval/65",
+      "sample_id": 4,
+      "missing": "is_nonnegative_integer",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/65",
+      "sample_id": 7,
+      "missing": "is_int",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/65",
+      "sample_id": 13,
+      "missing": "is_non_negative_integer",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/65",
+      "sample_id": 19,
+      "missing": "is_nonnegative_integer",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/69",
+      "sample_id": 2,
+      "missing": "Counter",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/69",
+      "sample_id": 5,
+      "missing": "Counter",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/69",
+      "sample_id": 11,
+      "missing": "collections",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/69",
+      "sample_id": 13,
+      "missing": "Counter",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/70",
+      "sample_id": 13,
+      "missing": "product",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/71",
+      "sample_id": 1,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/71",
+      "sample_id": 3,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/71",
+      "sample_id": 4,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/71",
+      "sample_id": 5,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/71",
+      "sample_id": 9,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/71",
+      "sample_id": 10,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/71",
+      "sample_id": 13,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/71",
+      "sample_id": 15,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/71",
+      "sample_id": 16,
+      "missing": "sqrt",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/72",
+      "sample_id": 5,
+      "missing": "is_palindrome",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/72",
+      "sample_id": 8,
+      "missing": "check_palindrome",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/72",
+      "sample_id": 12,
+      "missing": "check_palindrome",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/72",
+      "sample_id": 14,
+      "missing": "is_palindrome",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/75",
+      "sample_id": 0,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/75",
+      "sample_id": 3,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/75",
+      "sample_id": 7,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/75",
+      "sample_id": 10,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/76",
+      "sample_id": 9,
+      "missing": "log",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/77",
+      "sample_id": 19,
+      "missing": "cuberoot",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/78",
+      "sample_id": 11,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/79",
+      "sample_id": 4,
+      "missing": "pad_binary",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/80",
+      "sample_id": 1,
+      "missing": "i",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/81",
+      "sample_id": 9,
+      "missing": "grade_equation",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/82",
+      "sample_id": 0,
+      "missing": "prime_numbers",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_UNSERIALIZABLE"
+    },
+    {
+      "problem_id": "HumanEval/82",
+      "sample_id": 2,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/82",
+      "sample_id": 11,
+      "missing": "prime_numbers",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/83",
+      "sample_id": 5,
+      "missing": "starts_one",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/83",
+      "sample_id": 7,
+      "missing": "count_of_numbers_of_n_digit_integers",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/89",
+      "sample_id": 5,
+      "missing": "rotate_string",
+      "same_prefix": false,
+      "defines_missing": false,
+      "new_status": "FAIL_ASSERTION"
+    },
+    {
+      "problem_id": "HumanEval/89",
+      "sample_id": 6,
+      "missing": "string",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_LOAD"
+    },
+    {
+      "problem_id": "HumanEval/89",
+      "sample_id": 11,
+      "missing": "encrypt_character",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_ASSERTION"
+    },
+    {
+      "problem_id": "HumanEval/89",
+      "sample_id": 15,
+      "missing": "dictionary",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/91",
+      "sample_id": 14,
+      "missing": "re",
+      "same_prefix": false,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/93",
+      "sample_id": 15,
+      "missing": "letters",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/94",
+      "sample_id": 1,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/94",
+      "sample_id": 8,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/94",
+      "sample_id": 11,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/94",
+      "sample_id": 16,
+      "missing": "get_largest_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/96",
+      "sample_id": 2,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/96",
+      "sample_id": 3,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/96",
+      "sample_id": 15,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/99",
+      "sample_id": 2,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/99",
+      "sample_id": 4,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/100",
+      "sample_id": 2,
+      "missing": "next_odd",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/101",
+      "sample_id": 7,
+      "missing": "words",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/104",
+      "sample_id": 0,
+      "missing": "_has_no_even_digit",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_ASSERTION"
+    },
+    {
+      "problem_id": "HumanEval/105",
+      "sample_id": 8,
+      "missing": "dic",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/106",
+      "sample_id": 0,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/106",
+      "sample_id": 1,
+      "missing": "factorial",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/106",
+      "sample_id": 2,
+      "missing": "factorial",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/106",
+      "sample_id": 3,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/106",
+      "sample_id": 6,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/106",
+      "sample_id": 9,
+      "missing": "factorial",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/106",
+      "sample_id": 19,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/111",
+      "sample_id": 8,
+      "missing": "collections",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/111",
+      "sample_id": 10,
+      "missing": "collections",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/111",
+      "sample_id": 15,
+      "missing": "defaultdict",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/111",
+      "sample_id": 18,
+      "missing": "Counter",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/112",
+      "sample_id": 6,
+      "missing": "is_palindrome",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/113",
+      "sample_id": 2,
+      "missing": "count_odd_digits",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/113",
+      "sample_id": 12,
+      "missing": "odd",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/113",
+      "sample_id": 13,
+      "missing": "i",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/113",
+      "sample_id": 15,
+      "missing": "count_odds",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/113",
+      "sample_id": 18,
+      "missing": "s",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/113",
+      "sample_id": 19,
+      "missing": "n",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/114",
+      "sample_id": 16,
+      "missing": "sys",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/115",
+      "sample_id": 2,
+      "missing": "Notimplmented",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/115",
+      "sample_id": 9,
+      "missing": "bucket_capacity",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/120",
+      "sample_id": 1,
+      "missing": "heappush",
+      "same_prefix": false,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/120",
+      "sample_id": 6,
+      "missing": "heapq",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/123",
+      "sample_id": 7,
+      "missing": "get_odd_collatz_sequence",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/123",
+      "sample_id": 14,
+      "missing": "collatz_sequence",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/123",
+      "sample_id": 16,
+      "missing": "collatz",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/123",
+      "sample_id": 18,
+      "missing": "odd_even_filter",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/124",
+      "sample_id": 6,
+      "missing": "re",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/125",
+      "sample_id": 6,
+      "missing": "re",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/127",
+      "sample_id": 4,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/127",
+      "sample_id": 11,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/127",
+      "sample_id": 16,
+      "missing": "intersection_length",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/127",
+      "sample_id": 17,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "PASS"
+    },
+    {
+      "problem_id": "HumanEval/127",
+      "sample_id": 18,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/128",
+      "sample_id": 1,
+      "missing": "reduce",
+      "same_prefix": false,
+      "defines_missing": false,
+      "new_status": "FAIL_LOAD"
+    },
+    {
+      "problem_id": "HumanEval/128",
+      "sample_id": 2,
+      "missing": "prod_sign",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_ASSERTION"
+    },
+    {
+      "problem_id": "HumanEval/128",
+      "sample_id": 4,
+      "missing": "prod",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/128",
+      "sample_id": 6,
+      "missing": "prod_sign",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/128",
+      "sample_id": 11,
+      "missing": "reduce",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/128",
+      "sample_id": 19,
+      "missing": "sign",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/129",
+      "sample_id": 5,
+      "missing": "sys",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/129",
+      "sample_id": 12,
+      "missing": "heapq",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/129",
+      "sample_id": 15,
+      "missing": "lru_cache",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/131",
+      "sample_id": 1,
+      "missing": "functools",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/131",
+      "sample_id": 2,
+      "missing": "prod",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/131",
+      "sample_id": 5,
+      "missing": "reduce",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/131",
+      "sample_id": 7,
+      "missing": "reduce",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/131",
+      "sample_id": 9,
+      "missing": "functools",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/131",
+      "sample_id": 10,
+      "missing": "functools",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/132",
+      "sample_id": 9,
+      "missing": "re",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/133",
+      "sample_id": 0,
+      "missing": "ceil",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/133",
+      "sample_id": 1,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/133",
+      "sample_id": 2,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/133",
+      "sample_id": 4,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/133",
+      "sample_id": 6,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/133",
+      "sample_id": 7,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/133",
+      "sample_id": 8,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/133",
+      "sample_id": 10,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/133",
+      "sample_id": 11,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/133",
+      "sample_id": 12,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/133",
+      "sample_id": 14,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/133",
+      "sample_id": 15,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/133",
+      "sample_id": 16,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/133",
+      "sample_id": 17,
+      "missing": "ceil",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/133",
+      "sample_id": 18,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/133",
+      "sample_id": 19,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/134",
+      "sample_id": 8,
+      "missing": "re",
+      "same_prefix": false,
+      "defines_missing": false,
+      "new_status": "FAIL_ASSERTION"
+    },
+    {
+      "problem_id": "HumanEval/137",
+      "sample_id": 14,
+      "missing": "convert",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/138",
+      "sample_id": 1,
+      "missing": "sum_even_tuples",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/139",
+      "sample_id": 1,
+      "missing": "factorial",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_LOAD"
+    },
+    {
+      "problem_id": "HumanEval/139",
+      "sample_id": 5,
+      "missing": "factorial",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/139",
+      "sample_id": 6,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/139",
+      "sample_id": 7,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/139",
+      "sample_id": 9,
+      "missing": "factorial",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/139",
+      "sample_id": 14,
+      "missing": "factorial",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/139",
+      "sample_id": 16,
+      "missing": "reduce",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/139",
+      "sample_id": 17,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_LOAD"
+    },
+    {
+      "problem_id": "HumanEval/140",
+      "sample_id": 3,
+      "missing": "re",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/140",
+      "sample_id": 14,
+      "missing": "re",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/141",
+      "sample_id": 0,
+      "missing": "re",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/141",
+      "sample_id": 7,
+      "missing": "re",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/141",
+      "sample_id": 8,
+      "missing": "re",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/141",
+      "sample_id": 10,
+      "missing": "re",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/141",
+      "sample_id": 11,
+      "missing": "re",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/141",
+      "sample_id": 17,
+      "missing": "re",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/141",
+      "sample_id": 19,
+      "missing": "re",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/142",
+      "sample_id": 10,
+      "missing": "copy",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/143",
+      "sample_id": 1,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/143",
+      "sample_id": 4,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/143",
+      "sample_id": 6,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/143",
+      "sample_id": 7,
+      "missing": "list_primes",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/143",
+      "sample_id": 8,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/143",
+      "sample_id": 10,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/143",
+      "sample_id": 15,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/143",
+      "sample_id": 18,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/145",
+      "sample_id": 6,
+      "missing": "sum_digits",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/146",
+      "sample_id": 1,
+      "missing": "odd",
+      "same_prefix": false,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/146",
+      "sample_id": 3,
+      "missing": "first_odd",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/146",
+      "sample_id": 4,
+      "missing": "isOdd",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/146",
+      "sample_id": 5,
+      "missing": "is_special",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/146",
+      "sample_id": 8,
+      "missing": "check_first_last_odd",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "PASS"
+    },
+    {
+      "problem_id": "HumanEval/146",
+      "sample_id": 9,
+      "missing": "is_odd",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/146",
+      "sample_id": 14,
+      "missing": "isOdd",
+      "same_prefix": true,
+      "defines_missing": true,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/150",
+      "sample_id": 3,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/150",
+      "sample_id": 5,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/150",
+      "sample_id": 15,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/150",
+      "sample_id": 17,
+      "missing": "is_prime",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_SYNTAX"
+    },
+    {
+      "problem_id": "HumanEval/151",
+      "sample_id": 16,
+      "missing": "numbers",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/152",
+      "sample_id": 5,
+      "missing": "guesses",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/152",
+      "sample_id": 7,
+      "missing": "math",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/162",
+      "sample_id": 1,
+      "missing": "hashlib",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/162",
+      "sample_id": 2,
+      "missing": "hashlib",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/162",
+      "sample_id": 3,
+      "missing": "md5",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/162",
+      "sample_id": 4,
+      "missing": "hashlib",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/162",
+      "sample_id": 5,
+      "missing": "hashlib",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/162",
+      "sample_id": 6,
+      "missing": "hashlib",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/162",
+      "sample_id": 7,
+      "missing": "hashlib",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/162",
+      "sample_id": 8,
+      "missing": "hashlib",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/162",
+      "sample_id": 9,
+      "missing": "hashlib",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/162",
+      "sample_id": 11,
+      "missing": "hashlib",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/162",
+      "sample_id": 12,
+      "missing": "hashlib",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/162",
+      "sample_id": 13,
+      "missing": "hashlib",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/162",
+      "sample_id": 14,
+      "missing": "hashlib",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/162",
+      "sample_id": 15,
+      "missing": "hashlib",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/162",
+      "sample_id": 16,
+      "missing": "hashlib",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/162",
+      "sample_id": 17,
+      "missing": "hashlib",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_EXCEPTION"
+    },
+    {
+      "problem_id": "HumanEval/162",
+      "sample_id": 19,
+      "missing": "hashlib",
+      "same_prefix": true,
+      "defines_missing": false,
+      "new_status": "FAIL_LOAD"
+    }
+  ]
+}
