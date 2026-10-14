@@ -72,7 +72,10 @@ import json, os, sys
 _proto = os.fdopen(os.dup(1), "w", buffering=1)
 os.dup2(2, 1)                      # candidate prints go to stderr, never the protocol
 sys.stdout = sys.stderr
-_in = sys.stdin
+_in = os.fdopen(os.dup(0), "r")    # private copy of the request pipe
+_null = os.open(os.devnull, os.O_RDONLY)
+os.dup2(_null, 0); os.close(_null) # candidate stdin is empty: input() raises EOFError
+sys.stdin = open(os.devnull)       # instead of hanging on (or eating) protocol messages
 
 def _send(o):
     _proto.write(json.dumps(o) + "\n"); _proto.flush()

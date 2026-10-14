@@ -29,6 +29,9 @@ def test_correct_solution_passes():
     ("def other(a, b):\n    return a + b", "FAIL_MISSING_ENTRY"),
     ("def add(a, b):\n    while True: pass", "TIMEOUT_CPU"),
     ("import time\ndef add(a, b):\n    time.sleep(60)", "TIMEOUT_WALL"),
+    # interactive code must fail fast as a logic error, not hang into a timeout
+    ("def add(a, b):\n    return int(input())", "FAIL_EXCEPTION"),
+    ("x = input()\ndef add(a, b):\n    return a + b", "FAIL_LOAD"),
 ])
 def test_failure_is_classified(program, expected):
     assert run(program).status == expected
