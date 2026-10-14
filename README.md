@@ -34,6 +34,42 @@ Every outcome gets a cause (see `evalkit/taxonomy.py`):
 
 CPU timeouts (infinite loop, via `RLIMIT_CPU` → SIGXCPU) are distinguished from wall timeouts (sleeping or blocked), and OOM is read from the cgroup's `memory.events` rather than guessed from exit code 137.
 
+## Results: Qwen2.5-Coder-1.5B on HumanEval
+
+Setup: 164 problems × 20 samples = 3,280 completions from `qwen2.5-coder:1.5b-base` (Ollama, temperature 0.8, top-p 0.95, 512-token limit). Default limits are 3 s CPU, 10 s wall-clock, 256 MB memory, one fresh container per sample. All 164 canonical solutions pass, and the 21-case red-team suite passes under Docker.
+
+| metric | value |
+|---|---|
+| pass@1 | 32.7% (95% bootstrap CI 27.8–37.5%) |
+| pass@10 | 71.5% (95% CI 65.4–77.4%) |
+| failures that are logic errors | 2,201 of 2,209 (99.6%) |
+| resource failures (CPU timeout / OOM) | 8 (0.24% of samples) |
+| resource failures passing at 2×, 4×, 8× limits | 0 of 8 |
+| pass@1 across 0.25× to 4× limits | 32.7% at every level |
+| canonical solutions flaky at concurrency 1 / 4 / 16 | 0 / 0 / 0 |
+| noise band (strict vs. lenient pass@1) | 32.65% to 32.90% |
+| naive exit-code harness pass@1 | 32.7% (identical verdicts on all 3,280) |
+
+![Outcome by cause](docs/figures/status_breakdown.png)
+
+### What this shows
+
+**On honest samples, HumanEval's failure signal is trustworthy, and that is now measured rather than assumed.** Every resource failure still failed with 8× the budget (infinite loops, lists that grow forever), pass@1 doesn't move across a 16× range of limits, and known-correct solutions never flaked, even with 16 containers running at once. For this model and benchmark, a failure almost always means wrong code.
+
+**The oracle doesn't distort scores.** It agreed with a conventional exit-code harness on every one of the 3,280 samples, while the red-team suite shows it closes exploits that harness misses (`sys.exit(0)` before tests, always-true `__eq__`, forged result lines). It also replaces the single "FAIL" bucket with a cause for every failure.
+
+**Where misattribution did occur, it came from outside the execution limits:**
+
+- **Generation truncation.** 30 samples (0.9%) hit the 512-token limit; these caused 8 of the 35 syntax errors (23%), so they were scored as model errors when the cause was the generation budget.
+- **A harness bug, found by this study.** Two samples called `input()`. In the first version the candidate's stdin was the protocol pipe, so they hung and were labeled `TIMEOUT_WALL`, a wrong answer reported as a resource problem. The candidate now gets an empty stdin, `input()` fails immediately, and both are correctly classified as logic failures. Regression tests cover it.
+- **Sampling reproducibility.** With fixed per-sample seeds, 2 of 40 generations (5%) differed between 2 and 4 parallel Ollama workers, so concurrency is a hidden variable in sampling even when seeds are fixed.
+
+![Failures by truncation](docs/figures/truncation.png)
+
+### Next steps
+
+The null results suggest HumanEval is too easy, computationally, to stress the infrastructure. Natural extensions are an efficiency-sensitive benchmark where limits should matter, MBPP (the loader already supports it), and adversarial completions (prompting an instruct model to pass the tests by any means) to measure how often the naive harness is fooled by real model output rather than hand-written exploits.
+
 ## Quickstart
 
 ```bash
@@ -56,16 +92,7 @@ python run_eval.py study --problems HumanEval.jsonl --samples samples.jsonl
 5. **Naive vs. oracle.** Same samples through a typical exit-code harness (`mode="naive"`, same container) and through the oracle. Reports naive false-pass rate and how many naive "fails" were really limit hits.
 6. **Calibrated limits.** `calibrate_limits` sets per-problem budgets from the canonical solution's measured CPU time instead of one global timeout.
 
-## Roadmap
-
-1. **Week 1: core.** Build the image, make `pytest tests/` green under Docker, run `canonical` on HumanEval (164/164) and MBPP. Fix any TEST_BROKEN items; those are harness/dataset mismatches.
-2. **Week 2: real samples.** Generate n=20 to 200 samples per problem from one or two small open models (or use published sample dumps). Run `eval` and get pass@1/pass@10 with bootstrap CIs. Validate against the official `human-eval` harness: on honest samples, pass rates should match, and any disagreements are findings.
-3. **Week 3: experiments.** Run `study`. Make plots: limit-sensitivity curve, flake rate vs. concurrency, confusion matrix naive vs. oracle, flip rate by status.
-4. **Week 4: write-up.** A short blog post or report with the headline numbers (for example "X% of timeout failures were correct-but-slow; naive harness over-reports pass@1 by Y points on adversarial samples").
-
-Stretch goals: gVisor (`--runtime=runsc`) as a second isolation layer with an overhead comparison, a warm container pool with a measured cost to isolation, a seccomp profile tighter than Docker's default, and an "adversarial completion" set (prompting a model to pass tests by any means) to stress-test the integrity checks.
-
-## Known limitations (be upfront about these in interviews)
+## Known limitations
 
 - Arguments and return values must be plain data (int, float, str, bool, None, list, tuple, dict, set, bytes). Generators, numpy arrays, and in-place mutation of arguments aren't supported by the oracle, so those surface as FAIL_UNSERIALIZABLE and should be audited.
 - `CHILD_CRASH`/`CHILD_EXITED` after a privilege drop can't be killed by the parent; cleanup relies on container teardown (the harness is PID 1).
